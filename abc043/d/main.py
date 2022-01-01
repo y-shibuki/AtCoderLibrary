@@ -56,8 +56,11 @@ lst = [""] * len(s)
 prev_x = ""
 prev_prev_x = ""
 for i, x in enumerate(s):
-    if x == prev_x or x == prev_prev_x:
+    if x == prev_x:
         print(f"{i} {i + 1}")
+        exit()
+    elif x == prev_prev_x:
+        print(f"{i - 1} {i + 1}")
         exit()
     prev_prev_x = prev_x
     prev_x = x
