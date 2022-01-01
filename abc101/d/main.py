@@ -51,8 +51,7 @@ def S(): return sys.stdin.readline().rstrip()
 def LS(): return list(sys.stdin.readline().rstrip().split())
 
 K = I()
-for i in range(min(K, 9)):
-    print(i + 1)
-if K > 9:
-    for i in range(K - 9):
-        print(str(i + 1) + "9")
+i = 0
+while i < K:
+    t = int(str(i % 9 + 1) + "9" * int(i / 9))
+    
