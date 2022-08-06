@@ -52,8 +52,20 @@ def LS(): return list(sys.stdin.readline().rstrip().split())
 
 N, K = LI()
 
-while True:
+l = dict()
+
+for i in range(N):
     a, b = LI()
-    if (K := K - b) <= 0:
-        print(a)
+    if a in l:
+        l[a] += b
+    else:
+        l[a] = b
+
+l = sorted(l.items(), reverse=True)
+
+while True:
+    x = l.pop()
+    K -= x[1]
+    if K <= 0:
+        print(x[0])
         exit()
