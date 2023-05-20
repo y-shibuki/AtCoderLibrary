@@ -1,2 +1,0 @@
-# AtCoder
-AtCoderの解答
