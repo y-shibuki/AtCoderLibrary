@@ -1,6 +1,7 @@
 # AtCoderで快適にコーディングを行うために
 ## 初期設定
-$ oj login -u ユーザー名 -p パスワード "https://atcoder.jp/"
+atcoderのユーザー名とパスワードを登録
+$ oj login -u ユーザー名 -p パスワード "https://atcoder.jp/"  
 $ oj login --check "https://atcoder.jp/"
 
 ### 設定ファイルの場所
@@ -10,8 +11,8 @@ $ oj login --check "https://atcoder.jp/"
 ```acc new "id"```
 
 ### ショートカットキー
-・Command + Control + S
+・Command + Control + S  
 atcoderに提出する
 
-・Command + Control + T
+・Command + Control + T  
 コードをテストする

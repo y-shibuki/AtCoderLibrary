@@ -39,16 +39,8 @@ warn_unused_ignores = true
 warn_redundant_casts = true
 
 [tool.black]
-line-length = 79
+line-length = 150
 
 [tool.isort]
 profile = "black"
-line_length = 79
-
-[tool.flake8]
-max-line-length = 79
-# E203: ":"の前の空白を入れないルール
-# W503: 演算子の前に改行しないようにするルール
-extend-ignore = ["E203", "W503"]
-exclude = [".venv", "__pycache__",]
-max-complexity = 10
+line_length = 150
