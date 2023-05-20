@@ -1,8 +1,7 @@
-tests
-*.json
-*.txt
-acc_config
-abc*
+.venv
 .vscode
+src
+
+acc_config
+
 .DS_Store
-typical90
