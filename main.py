@@ -1,12 +1,12 @@
 import sys
 from math import gcd
-from typing import List
+from typing import Dict, List
 
 # 重複順列はproduct
 
 
 def i_input() -> int: return int(input())
-def i_map() -> map[int]: return map(int, input().split())
+def i_map() -> map: return map(int, input().split())
 def i_list() -> List[int]: return list(i_map())
 def i_row(N: int) -> List[int]: return [i_input() for _ in range(N)]
 def i_row_list(N: int) -> List[List[int]]: return [i_list() for _ in range(N)]
