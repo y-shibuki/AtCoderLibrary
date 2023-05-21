@@ -1,4 +1,4 @@
-from typing import Dict, List
+from typing import Dict
 
 
 class Indirected_Graph:
@@ -39,6 +39,9 @@ class Indirected_Graph:
             v (int): 頂点
         """
         self.nodes[v] = set()
+
+    def __getitem__(self, i: int) -> set:
+        return self.nodes[i]
 
     def __str__(self) -> str:
         return "\n".join([f"{idx}:{val}" for idx, val in self.nodes.items()])
