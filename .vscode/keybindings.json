@@ -1,0 +1,13 @@
+[
+    {
+        "key": "ctrl+cmd+s",
+        "command": "workbench.action.tasks.runTask",
+        "args": "submit_to_atcoder"
+    },
+
+    {
+        "key": "ctrl+cmd+t",
+        "command": "workbench.action.tasks.runTask",
+        "args": "test_atcoder_sample"
+    }
+]
