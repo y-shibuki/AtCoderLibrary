@@ -10,18 +10,9 @@ python = "3.11.3"
 online-judge-tools = "^11.5.1"
 
 [tool.poetry.group.dev.dependencies]
-flake8 = "^6.0.0"
-isort = "^5.12.0"
-black = "^23.3.0"
-pyproject-flake8 = "^6.0.0.post1"
 
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
 
-[tool.black]
-line-length = 150
-
-[tool.isort]
-profile = "black"
-line_length = 150
+[tool.ruff]
