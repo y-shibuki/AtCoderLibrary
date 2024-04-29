@@ -4,17 +4,20 @@
 def get_prime(n: int):
     primes = []
 
-    if n <= 1:  return []
+    if n <= 1:
+        return []
 
     is_prime = [False, False] + [True] * (n - 1)
 
     for p in range(2, n + 1):
-        if not is_prime[p]: continue
+        if not is_prime[p]:
+            continue
         primes.append(p)
         for i in range(p * p, n + 1, p):
             is_prime[i] = False
 
     return primes
+
 
 # 素因数分解
 # [素数, 指数]の二次元配列を返す関数
@@ -22,7 +25,8 @@ def prime_factorize(n: int):
     res = []
 
     for p in range(2, int(n ** 0.5) + 1):
-        if n % p != 0: continue
+        if n % p != 0:
+            continue
         ex = 0
         while n % p == 0:
             ex += 1
@@ -32,3 +36,15 @@ def prime_factorize(n: int):
         res.append([n, 1])
 
     return res
+
+
+def is_prime(n: int) -> bool:
+    """素数判定"""
+    i = 2
+
+    while i ** 2 <= n:
+        if n % i == 0:
+            return False
+        i += 1
+
+    return True
