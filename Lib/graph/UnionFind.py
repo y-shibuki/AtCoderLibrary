@@ -12,34 +12,16 @@ class UnionFind:
         self.groups = n
 
     def find(self, x: int) -> int:
-        """要素xが属する集合を求める
-
-        Args:
-            x (int): 要素x
-
-        Returns:
-            int: 要素xが属する集合の根
-        """
+        """要素xが属する集合を求める"""
         if self.parent[x] < 0:
             return x
-        p = x
-        while self.parent[p] >= 0:
-            p = self.parent[p]
-        # 経路圧縮
-        while self.parent[x] >= 0:
-            self.parent[x], x = p, self.parent[x]
-        return p
+        else:
+            # 経路圧縮
+            self.parent[x] = self.find(self.parent[x])
+            return self.parent[x]
 
     def union(self, x: int, y: int) -> bool:
-        """集合XとYを併合する
-
-        Args:
-            x (int): 集合Xに属する要素x
-            y (int): 集合Yに属する要素y
-
-        Returns:
-            bool: すでに併合済みならFalse、そうでないならTrue
-        """
+        """集合XとYを併合する"""
         x = self.find(x)
         y = self.find(y)
         if x == y:
@@ -54,7 +36,7 @@ class UnionFind:
     def size(self, x: int) -> int:
         return -self.parent[self.find(x)]
 
-    def same(self, x: int, y: int) -> bool:
+    def is_same(self, x: int, y: int) -> bool:
         return self.find(x) == self.find(y)
 
     def members(self, x: int) -> list:
