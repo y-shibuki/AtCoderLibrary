@@ -5,23 +5,16 @@ update(k, x): O(logN)
 query(l, r): O(logN)
 """
 class SegmentTree:
-    def __init__(self, lst, func, initial_val):
+    def __init__(self, N, func, initial_val):
         """
-        lst: 対象の配列
+        N: 配列の要素数
         func: 区間に対して実行する関数。引数は2つ。
         initial_val: 初期値
         """
-        n = len(lst)
         self.segfunc = func
         self.initial_val = initial_val
-        self.num = 1 << (n - 1).bit_length()
+        self.num = 1 << (N - 1).bit_length()
         self.tree = [initial_val] * 2 * self.num
-        # 配列の値を葉にセット
-        for i in range(n):
-            self.tree[self.num + i] = lst[i]
-        # 構築していく
-        for i in range(self.num - 1, 0, -1):
-            self.tree[i] = self.segfunc(self.tree[2 * i], self.tree[2 * i + 1])
 
     def update(self, k, x):
         """k番目の値をxに更新"""
