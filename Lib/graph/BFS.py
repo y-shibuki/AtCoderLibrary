@@ -48,7 +48,7 @@ def bfs(M: dict[int, list[int]], S: int):
     dist[S] = 1
     q.append(S)
 
-    while not len(q):
+    while q:
         v = q.popleft()
 
         for next_v in M[v]:
