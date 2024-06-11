@@ -67,3 +67,36 @@ class UnionFind:
         )
 
     __repr__ = __str__
+
+
+# 軽量版Union-Find
+class UnionFind:
+    def __init__(self, n):
+        self.n = n
+        self.parent = [-1] * n
+        self.groups = n
+
+    def find(self, x):
+        # 要素xが属する集合を求める
+        if self.parent[x] < 0:
+            return x
+        else:
+            # 経路圧縮
+            self.parent[x] = self.find(self.parent[x])
+            return self.parent[x]
+
+    def union(self, x, y):
+        # 集合XとYを併合する
+        x = self.find(x)
+        y = self.find(y)
+        if x == y:
+            return False
+        if self.parent[x] > self.parent[y]:
+            x, y = y, x
+        self.parent[x] += self.parent[y]
+        self.parent[y] = x
+        self.groups -= 1
+        return True
+
+    def is_same(self, x, y):
+        return self.find(x) == self.find(y)
