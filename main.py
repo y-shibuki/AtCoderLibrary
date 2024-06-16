@@ -4,9 +4,9 @@ from math import gcd
 
 def i_input(): return int(input())
 def i_map(): return map(int, input().split())
-def i_list(): return list(i_map())
-def i_row(N): return [i_input() for _ in range(N)]
-def i_row_list(N): return [i_list() for _ in range(N)]
+def i_list(): return list(map(int, input().split()))
+def i_row(N): return [int(input()) for _ in range(N)]
+def i_row_list(N): return [list(map(int, input().split())) for _ in range(N)]
 def s_input(): return input()
 def s_map(): return input().split()
 def s_list(): return list(s_map())
